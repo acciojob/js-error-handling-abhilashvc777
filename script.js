@@ -1,4 +1,5 @@
 //your code here
+const str = document.querySelector("#input1")
 class OutOfRangeError extends Error{
 	constructor(arg){
 		super(`Expression should only consist of integers and +-/* characters and not ${arg}`);
@@ -11,7 +12,10 @@ class InvalidExprError extends Error{
 		this.name = "InvalidExprError"
 	}
 }
-function evalString(expression){
+let expression;
+str.addEventListener("keyup",evalString)
+function evalString(){
+	 expression = str.value.toString()
 	try{
 		if(/^[+/*]/.test(expression)){
 			throw "Expression should not start with invalid operator"
