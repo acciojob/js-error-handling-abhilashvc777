@@ -26,7 +26,7 @@ function evalString(expression){
 		if (/[^0-9+/*-\s]/.test(expression)) {
       throw new OutOfRangeError(expression.match(/[^0-9+/*-\s]/g).join(", "));
     }
-	}
-} catch (error){
+	}catch (error){
 	console.error(error.name, error.message)
 }
+} 
