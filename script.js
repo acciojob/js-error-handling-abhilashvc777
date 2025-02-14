@@ -14,11 +14,11 @@ class InvalidExprError extends Error{
 function evalString(expression){
 	try{
 		if(/^[+/*]/.test(expression)){
-			throw new SyntaxError("Expression should not start with invalid operator")
+			throw "Expression should not start with invalid operator"
 		}
 
 		if (/[+/*-]$/.test(expression)) {
-      throw new SyntaxError("Expression should not end with invalid operator");
+      throw "Expression should not end with invalid operator"
     }
 		 if (/[+/*-]{2,}/.test(expression)) {
       throw new InvalidExprError();
